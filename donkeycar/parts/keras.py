@@ -105,6 +105,6 @@ def default_linear():
     model.compile(optimizer='adam',
                   loss={'angle_out': 'mean_squared_error',
                         'throttle_out': 'mean_squared_error'},
-                  loss_weights={'angle_out': 0.5, 'throttle_out': .5})
+                  loss_weights={'angle_out': .5, 'throttle_out': .5})
 
     return model
