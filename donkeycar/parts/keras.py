@@ -84,9 +84,12 @@ def default_linear():
 
     # Convolution2D class name is an alias for Conv2D
     x = Convolution2D(filters=24, kernel_size=(5, 5), strides=(2, 2), activation='relu')(x)
+    x = Dropout(rate=.35)(x)
     x = Convolution2D(filters=32, kernel_size=(5, 5), strides=(2, 2), activation='relu')(x)
+    x = Dropout(rate=.20)(x)
     x = Convolution2D(filters=64, kernel_size=(5, 5), strides=(2, 2), activation='relu')(x)
     x = Convolution2D(filters=64, kernel_size=(3, 3), strides=(2, 2), activation='relu')(x)
+    x = Dropout(rate=.15)(x)
     x = Convolution2D(filters=64, kernel_size=(3, 3), strides=(1, 1), activation='relu')(x)
 
     x = Flatten(name='flattened')(x)
